@@ -16,6 +16,11 @@
              copy=no
   when: go_version|failed or go_version.stdout != go_version_target
 
+#- name: remove go tarball
+#  file: 
+#    path: /usr/local/src/{{ go_tarball }}
+#    state: absent
+     
 - name: Add the Go bin directory to the PATH environment variable for all users
   copy: src=go-bin.sh
         dest=/etc/profile.d
