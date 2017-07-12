@@ -36,5 +36,5 @@
         dest=/etc/profile.d
 
 - name: Install dependency for build Go project
-  apt: name="{{ item }}" update_cache=yes
+  apt: name="{{item}}" update_cache=yes
   with_items: "{{ go_depend_package }}"
